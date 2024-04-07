@@ -1,0 +1,83 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color to the body */
+body {
+    background-color: #f8f9fa; /* Light gray */
+    font-family: Arial, sans-serif; /* Default font */
+}
+
+/* Container to center content */
+.container {
+    width: 400px; /* Adjust the width as needed */
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff; /* White */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Header styles */
+header {
+    background-color: #343a40; /* Dark gray */
+    color: #fff; /* White text */
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+/* Form styles */
+form {
+    padding: 20px; /* Add padding to the form */
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555; /* Dark gray text */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    width: calc(100% - 20px); /* Adjust the width with padding */
+    padding: 12px;
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    width: calc(100% - 20px); /* Adjust the width with padding */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Blue */
+    color: #fff; /* White text */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Link styles */
+a {
+    color: #007bff; /* Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
