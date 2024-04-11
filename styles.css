@@ -58,7 +58,6 @@ form textarea {
 }
 
 form input[type="submit"] {
-    width: calc(100% - 20px); /* Adjust the width with padding */
     padding: 12px;
     border: none;
     border-radius: 5px;
@@ -70,6 +69,20 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #0056b3; /* Darker blue on hover */
+}
+
+form input[name="googleSingup"] {
+    background-color: #4285F4; /* Google blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[name="googleSingup"]:hover{
+    background-color: #161616; /* Darker blue on hover */
 }
 
 /* Link styles */
