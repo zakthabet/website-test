@@ -27,6 +27,14 @@ const googleSignUpFunc = document.getElementById('googleSignupBtn');
 
 //added an onclick listner
 googleSignUpFunc.addEventListener("click", function(event){
+  // Get the email and password input fields
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+
+  // Clear the input fields
+  emailInput.value = '';
+  passwordInput.value = '';
+
   signInWithRedirect(auth, provider);
 
   getRedirectResult(auth)
