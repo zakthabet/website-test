@@ -1,30 +1,35 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js';
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js';
 // Follow this pattern to import other Firebase services
 // import { } from 'firebase/<service>';
-import { getAuth, getRedirectResult, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getAuth, getRedirectResult, signInWithRedirect, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+
+
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-  //...
+  apiKey: "AIzaSyDrVMDCxDvLU3mzcN6NBdw1TAmCJoCkVLY",
+  authDomain: "login-auth-723bd.firebaseapp.com",
+  projectId: "login-auth-723bd",
+  storageBucket: "login-auth-723bd.appspot.com",
+  messagingSenderId: "741178770770",
+  appId: "1:741178770770:web:11d33eeb7fb9c11367e68b",
+  measurementId: "G-ZNMPN3FJ7Y"
 };
-
+  
+//Initialized the app
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider(app);
 
-// Get a list of cities from your database
-async function getCities(db) {
-  const citiesCol = collection(db, 'cities');
-  const citySnapshot = await getDocs(citiesCol);
-  const cityList = citySnapshot.docs.map(doc => doc.data());
-  return cityList;
-}
+//called the googlesignupFunc
+const googleSignUpFunc = document.getElementById('googleSignupBtn');
 
 
+//added an onclick listner
+googleSignUpFunc.addEventListener("click", function(event){
+  signInWithRedirect(auth, provider);
 
-
-const auth = getAuth();
-getRedirectResult(auth)
+  getRedirectResult(auth)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access Google APIs.
     const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -43,4 +48,5 @@ getRedirectResult(auth)
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
-  });
+  })
+})

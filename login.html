@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="module" src="jsScript.js" defer></script>
     <script type="module" src="googleSignup.js" defer></script>    
     <script type="module" src="signIn.js" defer></script>
 </head>
@@ -15,9 +14,9 @@
         <label for="email">Email:</label><br>
         <input type="text" id="email" name="email" required><br>
         <label for="password">Password:</label><br>
-        <input type="password" id="password"><br>
+        <input type="password" id="password" required><br>
         <input type="submit" id="loginBtn" value="Login"><br>
-        <input type="submit" id="googleSignup" name="googleSingup" value="Sign up with Google">
+        <input type="submit" id="googleSignupBtn" name="googleSingup" value="Sign up with Google">
     </form>
     <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p>
 </body>
