@@ -1,7 +1,6 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
 //Import the api for the authentication
 import { getAuth, signOut} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
@@ -22,16 +21,20 @@ measurementId: "G-ZNMPN3FJ7Y"
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
+const logoutFunc = document.getElementById("logout");
+
+logoutFunc.addEventListener("click", function(event){
+  signOut(auth).then(() => {
+    // Sign-out successful.
+    window.location.href="login.html";
+  }).catch((error) => {
+    // An error happened.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+  });
+})
     
-    signOut(auth).then(() => {
-        // Sign-out successful.
-        alert("signed out")
-      }).catch((error) => {
-        // An error happened.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage)
-      });
+    

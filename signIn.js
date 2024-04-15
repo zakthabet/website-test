@@ -1,7 +1,6 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
 //Import the api for the authentication
 import { getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
@@ -22,7 +21,6 @@ measurementId: "G-ZNMPN3FJ7Y"
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 //grab the sign up button 
@@ -40,8 +38,7 @@ signInFunc.addEventListener("click", function(event){
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      window.location.href = "home.html"; 
-      
+      window.location.href = "home.html";
       // ...
     })
     .catch((error) => {
