@@ -19,9 +19,22 @@ appId: "1:741178770770:web:11d33eeb7fb9c11367e68b",
 measurementId: "G-ZNMPN3FJ7Y"
 };
 
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+// Check if a user is signed in
+const user = auth.currentUser;
+if (user) {
+  // User is signed in
+  const userId = user.uid;
+  console.log("Current user ID:", userId);
+} else {
+  // No user is signed in
+  console.log("No user signed in.");
+}
 
 //grab the sign up button 
 const signInFunc = document.getElementById('loginBtn');
